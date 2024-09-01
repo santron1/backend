@@ -13,5 +13,9 @@
     "sk"
   ],
   "author": "Sanchay",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5"
+  }
 }

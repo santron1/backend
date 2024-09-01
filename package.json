@@ -1,10 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "New project ,lets see if works or not",
+  "description": "New project, let's see if it works or not",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
     "javascript",
@@ -12,9 +13,5 @@
     "sk"
   ],
   "author": "Sanchay",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.4",
-    "prettier": "^3.3.3"
-  }
+  "license": "ISC"
 }

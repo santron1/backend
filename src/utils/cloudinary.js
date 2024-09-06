@@ -5,7 +5,7 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY, 
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
-
+/*
 const uploadOnCloudinary = async (localFilePath) => {
     try {
         if(!localFilePath) return console.log("Couldn't find local file");
@@ -20,7 +20,21 @@ const uploadOnCloudinary = async (localFilePath) => {
         fs.unlinkSync(localFilePath)
         return null;
     }
-}
+}*/
+const uploadOnCloudinary = async (localFilePath) => {
+    try {
+        if (!localFilePath) return console.log("Couldn't find local file");
+        const response = await cloudinary.uploader.upload(localFilePath, {
+            resource_type: "auto"
+        });
+        fs.unlinkSync(localFilePath);
+        return response;
+    } catch (error) {
+        fs.unlinkSync(localFilePath);
+        return null;
+    }
+};
+
 
 // cloudinary.v2.uploader.upload("https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg",
 //     {public_id: "shoes"},
